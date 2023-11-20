@@ -1,5 +1,7 @@
 # Semestrial Work (team C)
 
+This is a middleware architecture project realized during our month-long course in Prague at the Czech Technical University.
+
 ### BOUBOU Jean-Philippe & Co
 
 - BO layer (`package entity`)
