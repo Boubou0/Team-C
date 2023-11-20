@@ -1,49 +1,39 @@
 package cvut.fel.entity;
 
-/**
- * 
- */
-public class FileproofArticle {
+import lombok.Getter;
+import lombok.Setter;
 
-    /**
-     * Default constructor
-     */
+import javax.persistence.*;
+
+@Entity
+@Table(name = "fileproof_article")
+@Getter @Setter
+public class FileproofArticle extends AbstractEntity {
+
+    private String correctionText;
+    private int correctionFile;
+
     public FileproofArticle() {
     }
 
-    /**
-     * 
-     */
-    private String correctionText;
-
-    /**
-     * 
-     */
-    private File correctionFile;
-
-    public String getCorrectionText() {
-        return correctionText;
-    }
-
-    public void setCorrectionText(String correctionText) {
+    public FileproofArticle(String correctionText, int correctionFile) {
+        this();
         this.correctionText = correctionText;
-    }
-
-    public File getCorrectionFile() {
-        return correctionFile;
-    }
-
-    public void setCorrectionFile(File correctionFile) {
         this.correctionFile = correctionFile;
     }
 
-    /**
-     * @param article 
-     * @return
-     */
     public Boolean upload(Article article) {
         // TODO implement here
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "FileproofArticle{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", correctionText='" + correctionText + '\'' +
+                ", correctionFile=" + correctionFile +
+                '}';
+    }
 }

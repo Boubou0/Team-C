@@ -1,63 +1,44 @@
 package cvut.fel.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
-/**
- * 
- */
-public class File {
+@Entity
+@Table(name = "file")
+@Getter @Setter
+public class File extends AbstractEntity {
 
-    /**
-     * Default constructor
-     */
+    @Column(unique = true)
+    @NotNull
+    private String label;
+    @NotNull
+    private Date date;
+
     public File() {
     }
 
-    /**
-     * 
-     */
-    private int id;
-
-    /**
-     * 
-     */
-    private String label;
-
-    /**
-     * 
-     */
-    private Date date;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getLabel() {
-        return label;
-    }
-
-    public void setLabel(String label) {
+    public File(String label, Date date) {
+        this();
         this.label = label;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
         this.date = date;
     }
 
-    /**
-     * @return
-     */
     public Boolean download() {
         // TODO implement here
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "File{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", label='" + label + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }

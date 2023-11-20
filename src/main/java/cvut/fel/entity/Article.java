@@ -1,96 +1,43 @@
 package cvut.fel.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
-/**
- *
- */
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
 @Entity
+@Table(name = "article")
+@Getter @Setter
 public class Article extends AbstractEntity {
 
-    /**
-     * Default constructor
-     */
-    public Article() {
-
-    }
-
-
-
-  //  private List<Author> authors;
-    //private List<articleState> states;
-    /**
-     *
-     */
-    @Column
+    @NotNull
     private int version;
+    @NotNull
+    private int state;
 
-    /**
-     *
-     */
-   // private ArrayList<articleState> states;
-
-    public Long getId() {
-        return super.id;
+    public Article() {
     }
 
-    public void setId(Long id) {
-        super.id = id;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
+    public Article(String name, int version, int state){
+        this();
+        super.name = name;
         this.version = version;
+        this.state = state;
     }
 
-   /* public ArrayList<articleState> getState() {
-        return states;
-    }*/
-   /* public void addState(articleState state) {
-        this.states.add(state);
-    }
-    public void removeState(articleState state){
-        this.states.remove(state);
-    }*/
-
-    /**
-     * @return
-     */
     public Boolean download() {
-        // TODO implement here
-        return null;
+        //TODO
+        return true;
     }
 
-    /**
-     * @param version
-     * @return
-     */
-    public Article getOldVersion(int version) {
-        // TODO implement here
-        return null;
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", version=" + version +
+                ", state=" + state +
+                '}';
     }
-
-    /**
-     * @return
-     */
-    public static ArrayList<Article> getAllHurry() {
-        // TODO implement here
-        return null;
-    }
-
-    /**
-     * @return
-     */
-    public static ArrayList<Article> getAllNew() {
-        // TODO implement here
-        return null;
-    }
-
 }

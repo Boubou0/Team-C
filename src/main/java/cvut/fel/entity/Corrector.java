@@ -1,74 +1,44 @@
 package cvut.fel.entity;
 
-/**
- * 
- */
-public class Corrector {
+import lombok.Getter;
+import lombok.Setter;
 
-    /**
-     * Default constructor
-     */
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+
+@Entity
+@Table(name = "corrector")
+@Getter @Setter
+public class Corrector extends AbstractEntity {
+
+    @Column(unique = true)
+    @NotNull
+    private String email;
+    @Column(unique = true)
+    @NotNull
+    private String tel;
+
     public Corrector() {
     }
 
-    /**
-     * 
-     */
-    private int id;
-
-    /**
-     * 
-     */
-    private String name;
-
-    /**
-     * 
-     */
-    private String email;
-
-    /**
-     * 
-     */
-    private String tel;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
+    public Corrector(String email, String tel) {
+        this();
         this.email = email;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
         this.tel = tel;
     }
 
-    /**
-     * @return
-     */
     public Boolean sendEmail() {
         // TODO implement here
         return null;
     }
 
+    @Override
+    public String toString() {
+        return "Corrector{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", tel='" + tel + '\'' +
+                '}';
+    }
 }

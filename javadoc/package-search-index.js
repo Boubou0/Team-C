@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"cvut.fel"},{"l":"cvut.fel.config"},{"l":"cvut.fel.controller"},{"l":"cvut.fel.controller.config"},{"l":"cvut.fel.controller.interceptors"},{"l":"cvut.fel.dto"},{"l":"cvut.fel.entity"},{"l":"cvut.fel.exception"},{"l":"cvut.fel.repository"},{"l":"cvut.fel.service"}];updateSearchResults();
